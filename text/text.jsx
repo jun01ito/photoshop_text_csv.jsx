@@ -25,8 +25,9 @@ function writeLayerName(layObj) {
 	for (var i = 0; i < n; i++) {
 		if (txtObj[i].kind == LayerKind.TEXT) {
 			var txt = txtObj[i].textItem.contents;
-			var result = txt.match(regObj);
 			var layName = layObj.artLayers[i].name;
+			var result = layName.match(regObj);
+
 			if (result) {
 				fileObj.write(i + ':' + layName + CR + txt + CR + CR);
 				//alert("レイヤー名「" + txtObj[i].name.substr(0, 5) + "...」に該当文字があります。");
