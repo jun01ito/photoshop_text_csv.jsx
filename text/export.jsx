@@ -2,7 +2,7 @@
 //レイヤー名をテキストに保存
 //---------------------------------------
 var CR = String.fromCharCode(13);
-var savename = File.saveDialog("保存するファイル名を入れてください");
+var savename = File.saveDialog("csvを保存する");
 if (savename) {
 	var fileObj = new File(savename);
 	var flag = fileObj.open("w");
@@ -18,7 +18,7 @@ if (savename) {
 //---------------------------------------
 function writeLayerName(layObj) {
 	var _title = 'title';
-	var str = prompt("調べる文字を入れて下さい（正規表現）", _title);
+	var str = prompt("エクスポートするレイヤー名", _title);
 	//var str = _title;
 	var regObj = new RegExp(str, "g");
 	var txtObj = activeDocument.artLayers;

@@ -1,4 +1,4 @@
-// scvのPATH
+// csvのPATH
 var filename = "C:/Users/ito/Desktop/jsx/text/text.csv";
 var fileObj = new File(filename);
 var flg = fileObj.open("r");
@@ -21,7 +21,7 @@ if (flg == true) {
 	//---------------------------------------
 	function loadLayerName(layObj) {
 		var _title = 'Title';
-		var str = prompt("調べる文字を入れて下さい（正規表現）", _title);
+		var str = prompt("インポート先のレイヤー名", _title);
 		var regObj = new RegExp(str, "g");
 		var txtObj = activeDocument.artLayers;
 		var n = layObj.artLayers.length;
