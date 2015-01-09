@@ -28,7 +28,8 @@ function writeLayerName(layObj) {
 			var layName = layObj.artLayers[i].name;
 			var result = layName.match(regObj);
 			if (result) {
-				fileObj.write(i + ':' + layName + CR + txt + CR + CR);
+				fileObj.write(txt+',');
+				//fileObj.write(i + ':' + layName + CR + txt + CR + CR);
 				//alert("レイヤー名「" + txtObj[i].name.substr(0, 5) + "...」に該当文字があります。");
 			}
 		}
