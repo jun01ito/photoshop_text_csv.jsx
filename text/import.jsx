@@ -1,4 +1,3 @@
-var CR = String.fromCharCode(13);
 // scvのPATH
 var filename = "C:/Users/ito/Desktop/jsx/text/text.csv";
 var fileObj = new File(filename);
