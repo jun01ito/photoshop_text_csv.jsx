@@ -14,11 +14,12 @@ if (savename) {
 	}
 }
 //---------------------------------------
-//レイヤーセット内にレイヤーが含まれる限り書き出し（再帰）
+//レイヤーセット内にレイヤー指定のレイヤー名が含まれる限り ｃｓｖに書き出し
 //---------------------------------------
 function writeLayerName(layObj) {
-	var _title = 'Title';
+	var _title = 'title';
 	var str = prompt("調べる文字を入れて下さい（正規表現）", _title);
+	//var str = _title;
 	var regObj = new RegExp(str, "g");
 	var txtObj = activeDocument.artLayers;
 	var n = layObj.artLayers.length;
@@ -29,13 +30,8 @@ function writeLayerName(layObj) {
 			var result = layName.match(regObj);
 			if (result) {
 				fileObj.write(txt+',');
-				//fileObj.write(i + ':' + layName + CR + txt + CR + CR);
-				//alert("レイヤー名「" + txtObj[i].name.substr(0, 5) + "...」に該当文字があります。");
 			}
 		}
 	}
-	var ns = layObj.layerSets.length;
-	for (var i = 0; i < ns; i++) {
-		writeLayerName(layObj.layerSets[i])
-	}
+alert("Done!!!");
 }

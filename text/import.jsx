@@ -1,10 +1,13 @@
 var CR = String.fromCharCode(13);
+// scvのPATH
 var filename = "C:/Users/ito/Desktop/jsx/text/text.csv";
 var fileObj = new File(filename);
 var flg = fileObj.open("r");
 var txtAry = [];
 var resAry = [];
-
+//---------------------------------------
+//ｃｓｖ ファイル読み込み
+//---------------------------------------
 if (flg == true) {
 	alert(filename+"を読み込みます");
 	var textCsv = fileObj.read();
@@ -14,9 +17,8 @@ if (flg == true) {
 		txtAry.push(csvCount[i]);
 	};
 	fileObj.close();
-
 	//---------------------------------------
-	//レイヤーセット内にレイヤーが含まれる限り読み込み
+	//レイヤーセット内にテキストレイヤーが含まれる
 	//---------------------------------------
 	function loadLayerName(layObj) {
 		var _title = 'Title';
@@ -30,21 +32,15 @@ if (flg == true) {
 				var layName = layObj.artLayers[i].name;
 				var result = layName.match(regObj);
 				if (result) {
-					alert(layObj.artLayers[i]);
+					//alert(layObj.artLayers[i]);
 					resAry.push(layObj.artLayers[i]);
-					//txtObj[i].textItem.contents = txtAry[i];
 				}
 			}
 		}
-		//alert( resAry.length );
 		for (var i = 0; i < resAry.length; i++){
 				resAry[i].textItem.contents = txtAry[i];
 		}
-
-		// var ns = layObj.layerSets.length;
-		// for (var i = 0; i < ns; i++) {
-		// loadLayerName(layObj.layerSets[i])
-		// }
+		alert("Done!!!");
 	}
 	loadLayerName(activeDocument);
 
