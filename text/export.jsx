@@ -29,7 +29,7 @@ function writeLayerName(layObj) {
 			var layName = layObj.artLayers[i].name;
 			var result = layName.match(regObj);
 			if (result) {
-				fileObj.write(txt+',');
+				fileObj.write(txt+','+CR);
 			}
 		}
 	}
