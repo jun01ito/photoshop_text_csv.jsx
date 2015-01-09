@@ -1,11 +1,14 @@
+//---------------------------------------
 // csvのPATH
-var filename = "C:/Users/ito/Desktop/jsx/text/text.csv";
+//---------------------------------------
+//var filename = "C:/Users/ito/Desktop/jsx/text/text.csv";
+var filename = "/Users/itoujunichi/Desktop/jsx/text/text.csv";
 var fileObj = new File(filename);
 var flg = fileObj.open("r");
 var txtAry = [];
 var resAry = [];
 //---------------------------------------
-//ｃｓｖ ファイル読み込み
+// ｃｓｖファイル読み込み
 //---------------------------------------
 if (flg == true) {
 	alert(filename+"を読み込みます");
@@ -17,7 +20,7 @@ if (flg == true) {
 	};
 	fileObj.close();
 	//---------------------------------------
-	//レイヤーセット内にテキストレイヤーが含まれる
+	// 指定のテキストレイヤー名判定
 	//---------------------------------------
 	function loadLayerName(layObj) {
 		var _title = 'Title';
@@ -36,13 +39,15 @@ if (flg == true) {
 				}
 			}
 		}
+		//---------------------------------------
+		// 指定のテキストレイヤー名をcsvに変更
+		//---------------------------------------
 		for (var i = 0; i < resAry.length; i++){
 				resAry[i].textItem.contents = txtAry[i];
 		}
 		alert("Done!!!");
 	}
 	loadLayerName(activeDocument);
-
 } else {
 	alert("ファイルが開けませんでした");
 }
