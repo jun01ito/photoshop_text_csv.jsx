@@ -27,7 +27,7 @@ You want to retrieve the text data, or, to use when you want to edit.
     + text04
     + [  ] ALL (Grouping other than the target layer.　Header/Contents/Footer)
 
-※Please use from taking backup(・ω・｀)
+※Please use from taking backup.Use is at your own responsibility(.・ω・｀)
 
 ### export.jsx　How to Use.
 + Run export.js!
